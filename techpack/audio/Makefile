@@ -25,6 +25,10 @@ ifeq ($(CONFIG_ARCH_MSM8937), y)
 include $(srctree)/techpack/audio/config/sdm450auto.conf
 export
 endif
+ifeq ($(CONFIG_ARCH_MSM8953), y)
+include $(srctree)/techpack/audio/config/sdm450auto.conf
+export
+endif
 ifeq ($(CONFIG_MACH_XIAOMI_ROVA), y)
 CONFIG_SND_SOC_AW87319=y
 export
@@ -74,6 +78,10 @@ LINUXINCLUDE    += \
                 -include $(srctree)/techpack/audio/config/sdm660autoconf.h
 endif
 ifeq ($(CONFIG_ARCH_MSM8937), y)
+LINUXINCLUDE    += \
+                -include $(srctree)/techpack/audio/config/sdm450autoconf.h
+endif
+ifeq ($(CONFIG_ARCH_MSM8953), y)
 LINUXINCLUDE    += \
                 -include $(srctree)/techpack/audio/config/sdm450autoconf.h
 endif
